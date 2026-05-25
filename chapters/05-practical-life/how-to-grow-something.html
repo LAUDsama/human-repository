@@ -8,10 +8,15 @@
   <link rel="stylesheet" href="../../assets/styles.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="page">
   <div class="eyebrow">The Human Repository</div>
-  <a class="home-link" href="../../index.html">&larr; Home</a>
+  <nav class="page-nav" aria-label="Page navigation">
+    <a class="home-link" href="../../index.html">&larr; Home</a>
+    <a class="home-link" href="../../contents.html">Contents</a>
+    <a class="home-link" href="../../index.html#chapters">Chapters</a>
+  </nav>
 </header>
 
 <nav class="breadcrumb">
@@ -22,7 +27,7 @@
   <span class="here">How to Grow Something</span>
 </nav>
 
-<main>
+<main id="main">
 
 <section class="topic-head">
   <div class="kicker">Chapter 05 &middot; Practical Life Skills</div>
@@ -48,6 +53,7 @@
     <li><a href="#thinkers">What Thinkers and Traditions Noticed</a></li>
     <li><a href="#collapse">The 21st-Century Collapse of Growing Knowledge</a></li>
     <li><a href="#practice">How to Practice Growing</a></li>
+    <li><a href="#regional-growing">Regional Starting Points</a></li>
     <li><a href="#failure-modes">Common Failure Modes</a></li>
     <li><a href="#children">Teaching Children to Grow</a></li>
     <li><a href="#everything-broke">If Everything Broke</a></li>
@@ -131,8 +137,142 @@
     <p>Diversify crops, stagger planting dates, grow calorie crops as well as salad crops, plant perennials where appropriate, store water safely, improve soil over years, and build relationships with other growers. A resilient garden includes redundancy: more than one variety, more than one water strategy, more than one season, and more than one person who knows how the system works.</p>
   </section>
 
+  <section id="regional-growing">
+    <h2><span class="sec-num">08</span>Regional Starting Points</h2>
+    <p class="lede">A plant that is easy in one climate can be impossible, seasonal, or wasteful in another. Use this filter as a first sorting tool, not as a final planting calendar.</p>
+    <div class="aside">
+      <span class="label">Local reality check</span>
+      Regional guidance is approximate. Before eating from a garden, check local frost dates, soil contamination risk, water access, rainwater rules, and local laws. Cooperative extension offices, master gardeners, community gardens, seed libraries, and experienced neighbors usually know more than any general list.
+    </div>
+
+    <div class="region-filter" data-region-filter>
+      <div class="region-filter-head">
+        <label for="grow-region">Choose a region or climate profile</label>
+        <select id="grow-region" data-region-select>
+          <option value="northeast-us">Northeast United States (example: Bronx, NY 10475)</option>
+          <option value="southeast-us">Southeast United States</option>
+          <option value="midwest-us">Midwest United States</option>
+          <option value="southwest-us-arid">Southwest United States, arid</option>
+          <option value="pacific-northwest-us">Pacific Northwest United States</option>
+          <option value="tropical">Tropical</option>
+          <option value="temperate-europe">Temperate Europe</option>
+          <option value="andes-highland">Andes Highland</option>
+          <option value="global-general">Global general</option>
+        </select>
+      </div>
+      <p class="region-note" data-region-note aria-live="polite"></p>
+      <noscript>
+        <p class="region-note">JavaScript is off, so all examples are shown. Read each card's region tags before treating it as local guidance.</p>
+      </noscript>
+
+      <div class="region-grid">
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us pacific-northwest-us temperate-europe">
+          <h3>Kale and Collards</h3>
+          <p>Cold-tolerant greens that work well in spring and fall in the Northeast, including Bronx container or raised-bed gardens. Summer heat can make them tough or pest-prone.</p>
+          <p class="region-tags">Northeast US, Southeast US, Midwest US, Pacific Northwest US, Temperate Europe</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us pacific-northwest-us temperate-europe global-general">
+          <h3>Lettuce</h3>
+          <p>A quick beginner crop for cool weather, partial shade, and containers. In hot climates or hot months, choose heat-tolerant varieties or grow it as a shoulder-season crop.</p>
+          <p class="region-tags">Cool seasons, Containers, Global with timing</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us pacific-northwest-us temperate-europe global-general">
+          <h3>Radishes</h3>
+          <p>Fast, forgiving, and useful for learning seed depth and thinning. Best in cool weather; heat can make roots woody or sharply flavored.</p>
+          <p class="region-tags">Cool seasons, Beginner, Global with timing</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us pacific-northwest-us temperate-europe">
+          <h3>Beans</h3>
+          <p>Bush beans and pole beans are approachable warm-season crops after frost danger has passed. They need sun, steady water, and something to climb if pole types are chosen.</p>
+          <p class="region-tags">Northeast US, Southeast US, Midwest US, Pacific Northwest US, Temperate Europe</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us southwest-us-arid pacific-northwest-us temperate-europe">
+          <h3>Tomatoes</h3>
+          <p>Useful and beloved, but not a cool-season crop. In the Bronx and much of the Northeast, start indoors or buy starts, transplant after frost, and expect disease pressure in humid summers.</p>
+          <p class="region-tags">Warm season, Northeast with caveat, Many temperate regions</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us midwest-us pacific-northwest-us temperate-europe andes-highland">
+          <h3>Potatoes</h3>
+          <p>A practical calorie crop for cool to mild seasons, including buckets and grow bags. Use certified seed potatoes when possible, and avoid eating green tubers.</p>
+          <p class="region-tags">Northeast US, Midwest US, Pacific Northwest US, Temperate Europe, Andes Highland</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us pacific-northwest-us temperate-europe">
+          <h3>Onions and Garlic</h3>
+          <p>Good storage crops when matched to day length and planted at the right time. In the Northeast, garlic is often planted in fall and harvested the next summer.</p>
+          <p class="region-tags">Northeast US, Southeast US, Midwest US, Pacific Northwest US, Temperate Europe</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us midwest-us pacific-northwest-us temperate-europe">
+          <h3>Apples</h3>
+          <p>A long-term tree crop suited to many cold-winter regions, but variety, disease resistance, pruning, pollination, and local pest pressure matter more than the word "apple."</p>
+          <p class="region-tags">Northeast US, Midwest US, Pacific Northwest US, Temperate Europe</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us southwest-us-arid pacific-northwest-us temperate-europe global-general">
+          <h3>Mint</h3>
+          <p>A resilient herb for pots, partial sun, and beginners. Keep it contained; mint can spread aggressively in beds where winters are not enough to restrain it.</p>
+          <p class="region-tags">Containers, Herbs, Global with containment</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us southwest-us-arid pacific-northwest-us temperate-europe">
+          <h3>Thyme</h3>
+          <p>A drought-tolerant perennial herb that likes drainage and sun. In wet or cold regions, raised beds and gritty soil help it survive winter.</p>
+          <p class="region-tags">Temperate regions, Dry soil, Herbs</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="northeast-us southeast-us midwest-us southwest-us-arid pacific-northwest-us tropical temperate-europe global-general">
+          <h3>Basil</h3>
+          <p>A tender warm-season herb. In the Northeast, start indoors or buy starts and keep it away from frost; in tropical climates, watch humidity and disease.</p>
+          <p class="region-tags">Warm season, Indoor start in cold regions, Global with timing</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="global-general">
+          <h3>Compost and Leaves</h3>
+          <p>Almost every growing region benefits from returning clean organic matter to soil. Avoid contaminated leaves, diseased plant material, and composting practices that attract pests where rules prohibit it.</p>
+          <p class="region-tags">Global general, Soil building</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="global-general">
+          <h3>Rain Barrels</h3>
+          <p>Stored rainwater can help small gardens through dry spells, but legality and safety vary. Check local rules, screen mosquitoes, overflow away from foundations, and do not assume roof runoff is safe for every edible use.</p>
+          <p class="region-tags">Global general, Water, Legal caveat</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="tropical">
+          <h3>Cassava</h3>
+          <p>A major tropical calorie crop, not a casual recommendation for cold-winter places. It also requires correct variety knowledge and processing because some cassava contains dangerous cyanogenic compounds.</p>
+          <p class="region-tags">Tropical, Processing required</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="andes-highland">
+          <h3>Quinoa</h3>
+          <p>Historically important in Andean highland agriculture. It can be experimented with elsewhere, but heat, humidity, day length, and harvest processing can make it less straightforward than seed catalogs imply.</p>
+          <p class="region-tags">Andes Highland, Experimental elsewhere</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="southeast-us southwest-us-arid tropical">
+          <h3>Citrus</h3>
+          <p>Suited to warm regions and protected microclimates, with cold snaps as the major limit. In cold-winter places, citrus is usually a container plant that must come indoors.</p>
+          <p class="region-tags">Southeast US, Southwest arid, Tropical, Warm regions</p>
+        </article>
+
+        <article class="region-card" data-region-card data-regions="southwest-us-arid">
+          <h3>Prickly Pear</h3>
+          <p>A drought-adapted cactus useful in arid regions for pads and fruit when correctly identified and handled. It is not a substitute for learning local desert water limits and harvesting rules.</p>
+          <p class="region-tags">Southwest arid, Drought-adapted</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="failure-modes">
-    <h2><span class="sec-num">08</span>Common Failure Modes</h2>
+    <h2><span class="sec-num">09</span>Common Failure Modes</h2>
     <p>The most common failure is starting too large. A new grower imagines harvest and forgets watering in July, weeding after work, thinning seedlings, pest checks, and the ordinary fatigue of life. A neglected large garden teaches shame. A tended small garden teaches skill.</p>
     <p>Water causes many failures. Too little water wilts plants and stops germination. Too much water suffocates roots and encourages disease. Containers dry faster than beds. Mulch helps conserve moisture, but it should not be piled against stems like wet clothing. Water the soil, not just leaves. Morning watering often reduces disease pressure compared with soaking foliage at night.</p>
     <p>Light is another deceiver. A windowsill that looks bright to a person may be poor farmland for a pepper. Seedlings grown in weak light become long, pale, and fragile. Outdoor shade shifts through the season. Watch where the sun actually falls, not where you wish it fell.</p>
@@ -141,7 +281,7 @@
   </section>
 
   <section id="children">
-    <h2><span class="sec-num">09</span>Teaching Children to Grow</h2>
+    <h2><span class="sec-num">10</span>Teaching Children to Grow</h2>
     <p>Children should meet growing as wonder before duty. Give them seeds large enough to handle: beans, peas, sunflowers, squash, nasturtiums, or corn where appropriate. Let them press seeds into soil, water gently, make labels, and check every day. Fast crops help. A radish or pea shoot can hold attention better than a fruit tree whose lesson may take years.</p>
     <p>Give children ownership of a small bed, pot, or row, but do not make the harvest the only measure of success. Let them see roots, worms, compost, flowers, bees at a distance, fallen leaves, and failed seedlings. Teach them to ask: is the soil dry, is the leaf chewed, is the plant reaching, is there enough light, what changed since yesterday?</p>
     <p>Safety must be explicit. Teach children not to eat any plant unless a trusted adult identifies it. Point out poisonous plants in the yard. Keep pesticides, fertilizers, sharp tools, and treated seeds away from unsupervised hands. Wash hands after soil work, especially before eating. If the site may contain lead or other contaminants, use clean soil in containers or raised beds and keep children from digging in suspect ground.</p>
@@ -149,7 +289,7 @@
   </section>
 
   <section id="everything-broke">
-    <h2><span class="sec-num">10</span>If Everything Broke</h2>
+    <h2><span class="sec-num">11</span>If Everything Broke</h2>
     <p>In a severe breakdown, growing would matter, but it would not be instant salvation. A garden planted after hunger begins will not feed a family tomorrow. Calories are the hard truth. Lettuce, herbs, and tomatoes improve morale and nutrition, but staple calories usually come from grains, potatoes, sweet potatoes, beans, corn, squash, oil crops, nuts, animals, or stored food. Survival growing must be planned before need becomes desperate.</p>
     <p>Start with water. Without reliable water, seeds are hope without infrastructure. Learn how much rainfall your region receives, how to store water legally and safely, how to mulch, how to reduce evaporation, and how to choose drought-tolerant crops. Protect soil from erosion. A single storm can remove years of fertility from bare ground.</p>
     <p>Save seed cautiously. Open-pollinated varieties can often be saved if plants are healthy and cross-pollination is managed. Beans, peas, tomatoes, and lettuce are comparatively approachable. Corn, squash, brassicas, carrots, beets, and many others require more care because of crossing, population size, biennial life cycles, or processing needs. Label seeds with crop, variety, year, and notes. Store them cool, dry, dark, and protected from pests.</p>
@@ -158,7 +298,7 @@
   </section>
 
   <section id="further-reading">
-    <h2><span class="sec-num">11</span>Further Reading</h2>
+    <h2><span class="sec-num">12</span>Further Reading</h2>
     <ul class="further-reading">
       <li><span class="author">Charles C. Mann.</span> <span class="work">1491.</span><span class="note">A broad account of the Americas before Columbus, including Indigenous land use and agriculture; read alongside more local Indigenous sources.</span></li>
       <li><span class="author">Jack R. Harlan.</span> <span class="work">Crops and Man.</span><span class="note">A classic introduction to crop domestication, diversity, and agricultural origins.</span></li>
@@ -194,6 +334,7 @@
 
 <div class="back-links">
   <a href="index.html">&larr; Back to chapter</a>
+  <a href="../../contents.html">Contents</a>
   <a href="../../index.html">Back to home</a>
 </div>
 
@@ -205,5 +346,6 @@
   <p style="margin-top:1.2rem;">Contribute at <a href="https://github.com/LAUDsama/human-repository" target="_blank" rel="noopener">github.com/LAUDsama/human-repository</a></p>
 </footer>
 
+<script src="../../assets/region-filter.js"></script>
 </body>
 </html>

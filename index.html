@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="site">
   <div class="eyebrow">A Public Archive &middot; For All Generations</div>
@@ -20,6 +21,8 @@
 
 <nav class="chapters">
   <ul>
+    <li><a href="#start">Start Here</a></li>
+    <li><a href="contents.html">Contents</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#body">Body</a></li>
     <li><a href="#mind">Mind</a></li>
@@ -32,18 +35,104 @@
     <li><a href="#making">Making</a></li>
     <li><a href="#children">Children</a></li>
     <li><a href="#work">Work</a></li>
+    <li><a href="#medicine">Medicine</a></li>
   </ul>
 </nav>
 
-<main>
+<main id="main">
 
 <section class="intro" id="about">
   <blockquote>&ldquo;We were confused and mortal and we made things anyway.&rdquo;</blockquote>
   <p>This is a living archive of how humans lived, thought, felt, and managed their brief time on Earth. It was written in 2026, at the moment when artificial intelligence began doing many of those things on our behalf. It is not a lament. It is a record.</p>
   <p>Future generations: this is what we did. How we stayed alive inside ourselves. How we loved each other imperfectly. How we moved through days without knowing what would happen next. Some of it was beautiful. Most of it was hard. All of it was ours.</p>
-  <p>The archive is organized as a book of eleven chapters. Each chapter contains topic pages of long-form depth &mdash; the kind of reading that takes thirty minutes and rewards a lifetime. Begin anywhere. Wander. Return.</p>
+  <p>The archive is organized as a book of twelve chapters. Each chapter contains topic pages of long-form depth &mdash; the kind of reading that takes thirty minutes and rewards a lifetime. Begin anywhere. Wander. Return.</p>
   <p style="font-size:.88rem;color:var(--muted);font-style:italic;margin-top:1.5rem;">Everything here is dedicated to the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0</a>. Copy it. Translate it. Print it. Carve it in stone. It belongs to everyone.</p>
 </section>
+
+<section class="wayfinding" id="start" aria-labelledby="start-title">
+  <div class="wayfinding-head">
+    <span class="ch-num">Start Here</span>
+    <h2 id="start-title">Three quiet ways into the archive</h2>
+    <p>Use the repository like a book, a shelf, or a field guide. The links below are meant to reduce choice, not multiply it.</p>
+  </div>
+  <div class="wayfinding-grid">
+    <a class="way-card" href="#body">
+      <span class="way-label">Begin at the beginning</span>
+      <strong>Start with the body</strong>
+      <span>Breath, hunger, sleep, weather, movement, discomfort: the oldest facts first.</span>
+    </a>
+    <a class="way-card" href="contents.html">
+      <span class="way-label">See the whole shelf</span>
+      <strong>Browse by chapter</strong>
+      <span>A clean contents page lists every current chapter and completed topic page.</span>
+    </a>
+    <a class="way-card" href="#paths">
+      <span class="way-label">Arrive with a need</span>
+      <strong>Follow a reading path</strong>
+      <span>Short suggested trails gather related pages without requiring a full read-through.</span>
+    </a>
+  </div>
+</section>
+
+<section class="reading-paths" id="paths" aria-labelledby="paths-title">
+  <div class="wayfinding-head">
+    <span class="ch-num">Browse by Need</span>
+    <h2 id="paths-title">Suggested reading paths</h2>
+    <p>These are not curricula. They are small lanterns for readers who arrive tired, curious, overwhelmed, or looking for one human skill to recover.</p>
+  </div>
+  <div class="path-grid">
+    <article class="path-card">
+      <h3>Restart Basics</h3>
+      <p>For returning to the body and the ordinary facts of being alive.</p>
+      <a href="chapters/01-body-and-senses/how-to-breathe.html">Breathe</a>
+      <a href="chapters/01-body-and-senses/how-to-sleep.html">Sleep</a>
+      <a href="chapters/01-body-and-senses/how-to-walk.html">Walk</a>
+    </article>
+    <article class="path-card">
+      <h3>Inner Life</h3>
+      <p>For attention, uncertainty, and the slow repair of thought.</p>
+      <a href="chapters/02-mind-and-thinking/how-to-not-know-something.html">Not Knowing</a>
+      <a href="chapters/02-mind-and-thinking/how-to-pay-attention.html">Attention</a>
+      <a href="#inner">Chapter 06</a>
+    </article>
+    <article class="path-card">
+      <h3>Community</h3>
+      <p>For remembering that humans survived through one another.</p>
+      <a href="chapters/03-relationships/how-to-listen.html">Listen</a>
+      <a href="chapters/03-relationships/how-to-repair-a-relationship.html">Repair</a>
+      <a href="#community">Chapter 07</a>
+    </article>
+    <article class="path-card">
+      <h3>Practical Survival</h3>
+      <p>For the small competencies that kept a household standing.</p>
+      <a href="chapters/05-practical-life/how-to-fix-small-things.html">Fix</a>
+      <a href="chapters/05-practical-life/how-to-grow-something.html">Grow</a>
+      <a href="chapters/12-medicine-and-public-health/index.html">Health</a>
+    </article>
+    <article class="path-card">
+      <h3>Children &amp; Transmission</h3>
+      <p>For anyone thinking about what must be taught before it disappears.</p>
+      <a href="#children">Chapter 10</a>
+      <a href="chapters/02-mind-and-thinking/how-to-write-by-hand.html">Write by Hand</a>
+      <a href="chapters/05-practical-life/how-to-grow-something.html#children">Teach Growing</a>
+    </article>
+  </div>
+</section>
+
+<div class="chapter-strip" id="chapters" aria-label="Chapter index">
+  <a href="#body">01 Body</a>
+  <a href="#mind">02 Mind</a>
+  <a href="#relationships">03 Relationships</a>
+  <a href="#time">04 Time</a>
+  <a href="#practical">05 Practical</a>
+  <a href="#inner">06 Inner</a>
+  <a href="#community">07 Community</a>
+  <a href="#loss">08 Loss</a>
+  <a href="#making">09 Making</a>
+  <a href="#children">10 Children</a>
+  <a href="#work">11 Work</a>
+  <a href="#medicine">12 Medicine</a>
+</div>
 
 <!-- ============================================================
      CHAPTER 01 — THE BODY & SENSES
@@ -111,23 +200,23 @@
   <p class="ch-intro">Before AI could reason on demand, thinking was something humans had to do themselves &mdash; slowly, imperfectly, and alone. Not knowing was the normal condition of being alive. Learning to think clearly, honestly, and without flinching from difficulty was the work of a lifetime.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/02-mind-and-thinking/index.html#how-to-not-know-something">
+      <li><a class="topic-link" href="chapters/02-mind-and-thinking/how-to-not-know-something.html">
         <span class="topic-title">&#129300; How to Not Know Something</span>
         <span class="topic-blurb">Permanent partial ignorance as the baseline of inquiry. The phrase &ldquo;I don&rsquo;t know&rdquo; as one of the most useful sentences a human could say.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/02-mind-and-thinking/index.html#how-to-read-slowly-and-deeply">
+      <li><a class="topic-link" href="chapters/02-mind-and-thinking/how-to-read-slowly-and-deeply.html">
         <span class="topic-title">&#128218; How to Read Slowly and Deeply</span>
         <span class="topic-blurb">Reading that followed an argument across hundreds of pages, that built a world and required you to live in it for days.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/02-mind-and-thinking/index.html#how-to-write-by-hand">
+      <li><a class="topic-link" href="chapters/02-mind-and-thinking/how-to-write-by-hand.html">
         <span class="topic-title">&#9997; How to Write by Hand</span>
         <span class="topic-blurb">A slower medium that forced organized thought, the handwritten letter as physical trace of a specific afternoon in a specific life.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/02-mind-and-thinking/index.html#how-to-be-wrong">
+      <li><a class="topic-link" href="chapters/02-mind-and-thinking/how-to-be-wrong.html">
         <span class="topic-title">&#128172; How to Be Wrong</span>
         <span class="topic-blurb">A daily occurrence the brain was very poorly equipped to admit. The skill of updating, publicly and without excessive self-punishment.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/02-mind-and-thinking/index.html#how-to-pay-attention">
+      <li><a class="topic-link" href="chapters/02-mind-and-thinking/how-to-pay-attention.html">
         <span class="topic-title">&#129504; How to Pay Attention</span>
         <span class="topic-blurb">The most fundamental human resource, captured at industrial scale by the early 21st century, and still &mdash; with practice &mdash; trainable.</span>
       </a></li>
@@ -146,19 +235,19 @@
   <p class="ch-intro">Humans were profoundly social animals with profoundly ambivalent feelings about other humans. They needed connection the way they needed food and water &mdash; deprivation caused measurable physical harm &mdash; and they found sustained closeness exhausting and occasionally unbearable. The management of this contradiction was the central project of adult life.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/03-relationships/index.html#how-to-listen">
+      <li><a class="topic-link" href="chapters/03-relationships/how-to-listen.html">
         <span class="topic-title">&#128068; How to Listen</span>
         <span class="topic-blurb">An undervalued and rarely practiced skill, distinct from waiting quietly while someone else talks.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/03-relationships/index.html#how-to-have-a-real-conversation">
+      <li><a class="topic-link" href="chapters/03-relationships/how-to-have-a-real-conversation.html">
         <span class="topic-title">&#128483; How to Have a Real Conversation</span>
         <span class="topic-blurb">No agenda, no performance, no winner, no predetermined outcome. Both people changed by it.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/03-relationships/index.html#how-to-repair-a-relationship">
+      <li><a class="topic-link" href="chapters/03-relationships/how-to-repair-a-relationship.html">
         <span class="topic-title">&#128148; How to Repair a Relationship</span>
         <span class="topic-blurb">The repair was not the cleanup after the real relationship. The repair was the relationship.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/03-relationships/index.html#how-to-make-and-keep-friends">
+      <li><a class="topic-link" href="chapters/03-relationships/how-to-make-and-keep-friends.html">
         <span class="topic-title">&#129309; How to Make and Keep Friends</span>
         <span class="topic-blurb">A health intervention, not a luxury. Adult friendship as one of the most neglected components of well-being.</span>
       </a></li>
@@ -177,15 +266,15 @@
   <p class="ch-intro">Humans had a finite, irreplaceable amount of time. They spent much of it trying to fill or kill or save or manage it. The relationship with time was one of the defining struggles of human life, and learning to be in time rather than at war with it was a practice most people came to late, if at all.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/04-time-and-stillness/index.html#how-to-be-bored">
+      <li><a class="topic-link" href="chapters/04-time-and-stillness/how-to-be-bored.html">
         <span class="topic-title">&#128528; How to Be Bored</span>
         <span class="topic-blurb">The fertile emptiness from which creativity, reflection, and self-knowledge had always emerged.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/04-time-and-stillness/index.html#how-to-wait">
+      <li><a class="topic-link" href="chapters/04-time-and-stillness/how-to-wait.html">
         <span class="topic-title">&#9203; How to Wait</span>
         <span class="topic-blurb">Equanimity in the face of what could not be hurried. A mark of maturity in virtually every human culture.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/04-time-and-stillness/index.html#how-to-have-a-day-off">
+      <li><a class="topic-link" href="chapters/04-time-and-stillness/how-to-have-a-day-off.html">
         <span class="topic-title">&#127774; How to Have a Day Off</span>
         <span class="topic-blurb">Rest as a distinct mode of being. The recurring day of cessation across Judaism, Christianity, Islam, and the labor movements.</span>
       </a></li>
@@ -204,23 +293,23 @@
   <p class="ch-intro">For most of human history, practical competence was survival. By the early 21st century, most of this competence had been outsourced to specialists, services, and algorithms &mdash; which brought enormous comfort and eliminated a particular form of self-reliance that had been, for most of human existence, inseparable from dignity.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/05-practical-life/index.html#how-to-fix-small-things">
+      <li><a class="topic-link" href="chapters/05-practical-life/how-to-fix-small-things.html">
         <span class="topic-title">&#128295; How to Fix Small Things</span>
         <span class="topic-blurb">The cobbler, the tailor, the household tool kit. Repair as the default response to a broken thing.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/05-practical-life/index.html#how-to-navigate-without-gps">
+      <li><a class="topic-link" href="chapters/05-practical-life/how-to-navigate-without-gps.html">
         <span class="topic-title">&#128506; How to Navigate Without GPS</span>
         <span class="topic-blurb">Pacific Islanders crossing thousands of miles of ocean by stars, swells, and the flight of birds. The character-building properties of being lost.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/05-practical-life/index.html#how-to-manage-money-simply">
+      <li><a class="topic-link" href="chapters/05-practical-life/how-to-manage-money-simply.html">
         <span class="topic-title">&#128176; How to Manage Money Simply</span>
         <span class="topic-blurb">An anxiety-producing force whose foundations were small in number and almost universally ignored.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/05-practical-life/index.html#how-to-grow-something">
+      <li><a class="topic-link" href="chapters/05-practical-life/how-to-grow-something.html">
         <span class="topic-title">&#127807; How to Grow Something</span>
         <span class="topic-blurb">Generational knowledge of soil, season, and seed. Cycles that could not be hurried.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/05-practical-life/index.html#how-to-make-and-tend-a-fire">
+      <li><a class="topic-link" href="chapters/05-practical-life/how-to-make-and-tend-a-fire.html">
         <span class="topic-title">&#128293; How to Make and Tend a Fire</span>
         <span class="topic-blurb">The first technology, predating agriculture and writing. The central gathering point of every human community.</span>
       </a></li>
@@ -234,24 +323,24 @@
 <section class="chapter" id="inner">
   <div class="ch-head">
     <span class="ch-num">Chapter 06</span>
-    <h2><a href="chapters/06-inner-life/index.html">The Inner Life</a></h2>
+    <h2><a href="contents.html#contents-inner">The Inner Life</a></h2>
   </div>
   <p class="ch-intro">Humans had an inner life &mdash; a continuous private stream of thought, feeling, memory, fear, desire, and imagination that ran parallel to everything they did in the visible world. No one else had access to it. It could not be fully transcribed or transferred. It was the most intimate fact of existence, and managing it honestly was the most demanding work most humans ever did.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/06-inner-life/index.html#how-to-be-sad">
+      <li><a class="topic-link" href="contents.html#contents-inner">
         <span class="topic-title">&#128546; How to Be Sad</span>
         <span class="topic-blurb">The appropriate and proportionate response to loss. <em>Saudade</em>, <em>mono no aware</em>, and the cultures that gave grief a form.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/06-inner-life/index.html#how-to-be-angry-usefully">
+      <li><a class="topic-link" href="contents.html#contents-inner">
         <span class="topic-title">&#128548; How to Be Angry Usefully</span>
         <span class="topic-blurb">Information before it was a problem. The useful middle between suppression and destruction.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/06-inner-life/index.html#how-to-be-grateful">
+      <li><a class="topic-link" href="contents.html#contents-inner">
         <span class="topic-title">&#128591; How to Be Grateful</span>
         <span class="topic-blurb">The most studied intervention for subjective well-being in the psychological literature, and among the simplest.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/06-inner-life/index.html#how-to-know-yourself">
+      <li><a class="topic-link" href="contents.html#contents-inner">
         <span class="topic-title">&#129710; How to Know Yourself</span>
         <span class="topic-blurb">The most ancient project and the most persistently incomplete. Visible in calendar and bank statement, not statements of principle.</span>
       </a></li>
@@ -265,20 +354,20 @@
 <section class="chapter" id="community">
   <div class="ch-head">
     <span class="ch-num">Chapter 07</span>
-    <h2><a href="chapters/07-community/index.html">Community &amp; Civic Life</a></h2>
+    <h2><a href="contents.html#contents-community">Community &amp; Civic Life</a></h2>
   </div>
   <p class="ch-intro">Humans were not meant to live alone, and they were not meant to live only in families. They were designed, by long evolution, to live in communities &mdash; groups of roughly 100 to 150 people whose lives were genuinely intertwined, who shared obligations and history, who knew each other across time and circumstance.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/07-community/index.html#how-to-participate-in-democracy">
+      <li><a class="topic-link" href="contents.html#contents-community">
         <span class="topic-title">&#128379; How to Participate in Democracy</span>
         <span class="topic-blurb">A continuous practice rather than a periodic event. The undervalued power of local government.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/07-community/index.html#how-to-be-a-neighbor">
+      <li><a class="topic-link" href="contents.html#contents-community">
         <span class="topic-title">&#127968; How to Be a Neighbor</span>
         <span class="topic-blurb">The primary safety net for most of history. Resilience that no institution could replicate.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/07-community/index.html#how-to-help-a-stranger">
+      <li><a class="topic-link" href="contents.html#contents-community">
         <span class="topic-title">&#129330; How to Help a Stranger</span>
         <span class="topic-blurb">More reliably mood-elevating than spending the same resources on oneself. Every adult had been helped this way.</span>
       </a></li>
@@ -292,20 +381,20 @@
 <section class="chapter" id="loss">
   <div class="ch-head">
     <span class="ch-num">Chapter 08</span>
-    <h2><a href="chapters/08-loss-and-endings/index.html">Loss, Death &amp; Endings</a></h2>
+    <h2><a href="contents.html#contents-loss">Loss, Death &amp; Endings</a></h2>
   </div>
   <p class="ch-intro">Every human life ended. Every human relationship eventually changed or ended. The cultural technologies developed across human history for dealing with these facts &mdash; ritual, religion, art, philosophy, community &mdash; were among the most sophisticated and important things humans ever built.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/08-loss-and-endings/index.html#how-to-grieve">
+      <li><a class="topic-link" href="contents.html#contents-loss">
         <span class="topic-title">&#128337; How to Grieve</span>
         <span class="topic-blurb">Not a phase to be completed. The natural response of a loving mind to the permanent absence of something it had organized itself around.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/08-loss-and-endings/index.html#how-to-think-about-death">
+      <li><a class="topic-link" href="contents.html#contents-loss">
         <span class="topic-title">&#9940; How to Think About Death</span>
         <span class="topic-blurb"><em>Memento mori</em> as a technology for living. The clarifying question of the final year.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/08-loss-and-endings/index.html#how-to-let-things-end">
+      <li><a class="topic-link" href="contents.html#contents-loss">
         <span class="topic-title">&#127807; How to Let Things End</span>
         <span class="topic-blurb">Not everything that ended was a failure. Endings deserved ritual.</span>
       </a></li>
@@ -319,20 +408,20 @@
 <section class="chapter" id="making">
   <div class="ch-head">
     <span class="ch-num">Chapter 09</span>
-    <h2><a href="chapters/09-making-things/index.html">Making Things</a></h2>
+    <h2><a href="contents.html#contents-making">Making Things</a></h2>
   </div>
   <p class="ch-intro">Humans made things. This was one of the most fundamental things about them. The act of making &mdash; of taking raw material and imposing form on it through skill and intention &mdash; was not merely productive. It was one of the primary sources of meaning, identity, and satisfaction available to human beings.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/09-making-things/index.html#how-to-make-something-with-your-hands">
+      <li><a class="topic-link" href="contents.html#contents-making">
         <span class="topic-title">&#127912; How to Make Something With Your Hands</span>
         <span class="topic-blurb">Procedural knowledge stored in the nervous system. Flow as the most reliable byproduct of craft.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/09-making-things/index.html#how-to-engage-with-music">
+      <li><a class="topic-link" href="contents.html#contents-making">
         <span class="topic-title">&#127925; How to Engage With Music</span>
         <span class="topic-blurb">Older than writing. The physiological difference between making and consuming.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/09-making-things/index.html#how-to-look-at-things-made-by-others">
+      <li><a class="topic-link" href="contents.html#contents-making">
         <span class="topic-title">&#128444; How to Look at Things Made by Others</span>
         <span class="topic-blurb">The progressive enlargement of perception. Fifteen minutes with one painting.</span>
       </a></li>
@@ -346,16 +435,16 @@
 <section class="chapter" id="children">
   <div class="ch-head">
     <span class="ch-num">Chapter 10</span>
-    <h2><a href="chapters/10-children/index.html">Children &amp; Raising the Next Generation</a></h2>
+    <h2><a href="contents.html#contents-children">Children &amp; Raising the Next Generation</a></h2>
   </div>
   <p class="ch-intro">Children were human beings at the beginning of their formation. They arrived already equipped with fundamental social instincts but without the experience or self-regulation that would make those instincts useful. Raising children was one of the most consequential things an adult could do, and one of the least well-instructed.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/10-children/index.html#how-to-raise-a-child">
+      <li><a class="topic-link" href="contents.html#contents-children">
         <span class="topic-title">&#128584; How to Raise a Child</span>
         <span class="topic-blurb">Secure attachment as the most consistent finding in developmental psychology. Repair, not perfection.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/10-children/index.html#how-to-transmit-what-you-know">
+      <li><a class="topic-link" href="contents.html#contents-children">
         <span class="topic-title">&#128081; How to Transmit What You Know</span>
         <span class="topic-blurb">Knowledge that existed nowhere in writing. The recipe shown rather than written. Unasked questions cost everything.</span>
       </a></li>
@@ -369,18 +458,37 @@
 <section class="chapter" id="work">
   <div class="ch-head">
     <span class="ch-num">Chapter 11</span>
-    <h2><a href="chapters/11-work-and-vocation/index.html">Work &amp; Vocation</a></h2>
+    <h2><a href="contents.html#contents-work">Work &amp; Vocation</a></h2>
   </div>
   <p class="ch-intro">Work occupied a large fraction of human waking life, and the question of what to do with that fraction was one of the most persistently difficult questions of adult life. How to resist the conflation of identity with productivity. How to find in work something beyond mere necessity. Every tradition of human wisdom had something to say about it. None of them said it was simple.</p>
   <div class="ch-body">
     <ul class="topic-list">
-      <li><a class="topic-link" href="chapters/11-work-and-vocation/index.html#how-to-work-well">
+      <li><a class="topic-link" href="contents.html#contents-work">
         <span class="topic-title">&#128736; How to Work Well</span>
         <span class="topic-blurb">The carpenter who finished the back of the cabinet. Integrity as the standard set where only you could see it.</span>
       </a></li>
-      <li><a class="topic-link" href="chapters/11-work-and-vocation/index.html#how-to-find-meaningful-work">
+      <li><a class="topic-link" href="contents.html#contents-work">
         <span class="topic-title">&#127793; How to Find Meaningful Work</span>
         <span class="topic-blurb">Passion most commonly followed engagement and skill, rather than preceding them. Not all meaning came from work.</span>
+      </a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 12 — MEDICINE & PUBLIC HEALTH
+     ============================================================ -->
+<section class="chapter" id="medicine">
+  <div class="ch-head">
+    <span class="ch-num">Chapter 12</span>
+    <h2><a href="chapters/12-medicine-and-public-health/index.html">Medicine &amp; Public Health</a></h2>
+  </div>
+  <p class="ch-intro">Humans survived illness together: through prevention, clean water, wound care, safe medicine use, warning signs, and the civic habits that kept one fever or injury from becoming many.</p>
+  <div class="ch-body">
+    <ul class="topic-list">
+      <li><a class="topic-link" href="chapters/12-medicine-and-public-health/index.html">
+        <span class="topic-title">Browse the medicine chapter</span>
+        <span class="topic-blurb">A responsible chapter landing for infection prevention, wound care, medical emergencies, oral rehydration, medicine safety, antibiotics boundaries, and community health.</span>
       </a></li>
     </ul>
   </div>
