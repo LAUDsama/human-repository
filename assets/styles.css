@@ -1,0 +1,484 @@
+/* ============================================================
+   The Human Repository — shared stylesheet
+   A book/manuscript aesthetic. Cream paper, ink, gold, walnut.
+   CC0 1.0. No rights reserved.
+   ============================================================ */
+
+:root{
+  --ink:#1a1a1a;
+  --paper:#faf8f2;
+  --cream:#f2ede0;
+  --accent:#7c4f2e;
+  --gold:#c8952a;
+  --muted:#6b6256;
+  --border:#d6cfc1;
+  --tag-bg:#ede9df;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:var(--accent);}
+a:hover{color:var(--ink);}
+
+/* ----------  HEADERS  ---------- */
+
+header.site{
+  background:var(--ink);
+  color:var(--paper);
+  text-align:center;
+  padding:5rem 2rem 4rem;
+  position:relative;
+  overflow:hidden;
+}
+header.site::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.025) 39px,rgba(255,255,255,.025) 40px);
+  pointer-events:none;
+}
+.eyebrow{
+  font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.25rem;
+}
+header.site h1{
+  font-size:clamp(2.2rem,5vw,4rem);font-weight:700;
+  letter-spacing:-.02em;line-height:1.1;margin-bottom:1.25rem;
+}
+header.site .sub{
+  font-size:1.2rem;color:#c0b8a8;max-width:680px;
+  margin:0 auto 2rem;font-style:italic;line-height:1.65;
+}
+.meta{font-size:.8rem;color:#6a6050;letter-spacing:.12em;}
+.badge{
+  display:inline-block;margin-top:1.5rem;
+  background:rgba(200,149,42,.12);
+  border:1px solid rgba(200,149,42,.35);
+  color:var(--gold);padding:.4rem 1rem;border-radius:2px;
+  font-size:.77rem;letter-spacing:.15em;text-transform:uppercase;
+  font-family:monospace;
+}
+
+/* Compact page header (chapter & topic pages) */
+header.page{
+  background:var(--ink);color:var(--paper);
+  padding:2.6rem 2rem 2.4rem;text-align:center;position:relative;overflow:hidden;
+}
+header.page::before{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.025) 39px,rgba(255,255,255,.025) 40px);
+  pointer-events:none;
+}
+header.page .home-link{
+  font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;
+}
+header.page .home-link:hover{color:#fff;}
+
+/* ----------  TOP NAV  ---------- */
+
+nav.chapters{
+  background:var(--cream);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 1px 4px rgba(0,0,0,.05);
+}
+nav.chapters ul{
+  list-style:none;display:flex;flex-wrap:wrap;justify-content:center;
+  max-width:1100px;margin:0 auto;padding:0;
+}
+nav.chapters li a{
+  display:block;padding:.8rem 1rem;font-size:.78rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);text-decoration:none;transition:color .2s;
+}
+nav.chapters li a:hover{color:var(--accent);}
+nav.chapters li a.current{color:var(--ink);font-weight:700;}
+
+/* ----------  MAIN  ---------- */
+
+main{max-width:840px;margin:0 auto;padding:0 1.5rem 5rem;}
+main.wide{max-width:980px;}
+
+/* Intro / about block on homepage */
+.intro{
+  text-align:center;padding:4rem 1rem 2.5rem;
+  border-bottom:1px solid var(--border);margin-bottom:3.5rem;
+}
+.intro blockquote{
+  font-size:1.4rem;font-style:italic;color:var(--accent);
+  max-width:620px;margin:0 auto 1.75rem;line-height:1.55;
+}
+.intro p{
+  font-size:1.02rem;color:var(--muted);
+  max-width:660px;margin:0 auto 1rem;
+}
+
+/* ----------  CHAPTER CARDS (homepage)  ---------- */
+
+.chapter{
+  margin-bottom:4rem;background:#fff;
+  border:1px solid var(--border);border-radius:2px;overflow:hidden;
+}
+.ch-head{
+  background:var(--cream);padding:1.4rem 2.25rem;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:baseline;gap:1.1rem;flex-wrap:wrap;
+}
+.ch-num{
+  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-family:monospace;white-space:nowrap;
+}
+.ch-head h2{font-size:1.3rem;font-weight:700;color:var(--ink);}
+.ch-head h2 a{color:inherit;text-decoration:none;}
+.ch-head h2 a:hover{color:var(--accent);}
+.ch-intro{
+  padding:1.75rem 2.25rem;font-size:1.01rem;color:var(--muted);
+  font-style:italic;border-bottom:1px dashed var(--border);line-height:1.75;
+}
+.ch-body{padding:1.5rem 2.25rem 2.25rem;}
+
+/* List of topics inside a chapter card on homepage */
+.topic-list{list-style:none;padding:0;margin:0;}
+.topic-list li{
+  border-bottom:1px solid var(--border);
+  padding:1rem 0;
+}
+.topic-list li:last-child{border-bottom:none;}
+.topic-list a.topic-link{
+  display:block;text-decoration:none;color:inherit;
+}
+.topic-list a.topic-link:hover .topic-title{color:var(--accent);}
+.topic-list .topic-title{
+  display:block;font-size:1.05rem;font-weight:700;color:var(--ink);
+  margin-bottom:.25rem;transition:color .15s;
+}
+.topic-list .topic-blurb{
+  font-size:.94rem;color:var(--muted);line-height:1.65;
+}
+.topic-list .topic-meta{
+  font-size:.7rem;font-family:monospace;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);margin-top:.35rem;
+  display:block;
+}
+
+/* ----------  ENTRY (legacy / chapter landings)  ---------- */
+
+.entries{display:grid;gap:1.5rem;}
+.entry{
+  border:1px solid var(--border);border-radius:2px;
+  padding:1.5rem 1.75rem;background:var(--paper);
+}
+.entry h3{
+  font-size:1.05rem;font-weight:700;color:var(--ink);
+  margin-bottom:.75rem;padding-bottom:.5rem;
+  border-bottom:1px solid var(--border);
+}
+.entry h3 a{color:inherit;text-decoration:none;}
+.entry h3 a:hover{color:var(--accent);}
+.entry p{
+  font-size:.96rem;color:#3a3430;line-height:1.8;margin-bottom:.85rem;
+}
+.entry p:last-of-type{margin-bottom:0;}
+.entry ul{margin:.75rem 0 .85rem 1.3rem;}
+.entry li{
+  font-size:.94rem;color:var(--muted);
+  margin-bottom:.45rem;line-height:1.65;
+}
+.entry blockquote{
+  margin:.85rem 0;padding:.6rem 1rem;
+  border-left:3px solid var(--gold);background:var(--cream);
+  font-style:italic;font-size:.93rem;color:var(--accent);
+}
+.entry .read-more{
+  display:inline-block;margin-top:1rem;font-size:.78rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);text-decoration:none;font-family:monospace;
+  border-bottom:1px solid var(--accent);padding-bottom:.15rem;
+}
+.entry .read-more:hover{color:var(--ink);border-color:var(--ink);}
+
+/* ----------  TAGS  ---------- */
+
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem;}
+.tag{
+  background:var(--tag-bg);color:var(--muted);
+  font-size:.7rem;padding:.2rem .6rem;border-radius:2px;
+  letter-spacing:.07em;font-family:monospace;
+}
+
+/* ----------  ORNAMENT  ---------- */
+
+.orn{
+  text-align:center;color:var(--border);font-size:1.1rem;
+  margin:2.5rem 0;letter-spacing:.6rem;
+}
+
+/* ============================================================
+   PAGINATED NEW COMPONENTS
+   ============================================================ */
+
+/* ----------  BREADCRUMB  ---------- */
+
+.breadcrumb{
+  max-width:840px;margin:0 auto;padding:1.4rem 1.5rem .25rem;
+  font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);font-family:monospace;
+}
+.breadcrumb a{color:var(--muted);text-decoration:none;}
+.breadcrumb a:hover{color:var(--accent);}
+.breadcrumb .sep{margin:0 .5rem;color:var(--border);}
+.breadcrumb .here{color:var(--ink);}
+
+/* ----------  TOPIC HEADER (top of a topic page)  ---------- */
+
+.topic-head{
+  max-width:840px;margin:0 auto;padding:1.5rem 1.5rem 2rem;
+  border-bottom:1px solid var(--border);text-align:center;
+}
+.topic-head .kicker{
+  font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);font-family:monospace;margin-bottom:1rem;
+}
+.topic-head h1{
+  font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;
+  letter-spacing:-.01em;line-height:1.2;margin-bottom:1.1rem;
+  color:var(--ink);
+}
+.topic-head .deck{
+  font-size:1.08rem;color:var(--muted);font-style:italic;
+  max-width:600px;margin:0 auto;line-height:1.65;
+}
+.topic-head .topic-meta-row{
+  margin-top:1.4rem;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);font-family:monospace;
+}
+
+/* ----------  IN-PAGE TABLE OF CONTENTS  ---------- */
+
+.topic-toc{
+  max-width:840px;margin:2rem auto 2.5rem;
+  padding:1.6rem 2rem 1.4rem;
+  background:var(--cream);
+  border:1px solid var(--border);border-radius:2px;
+}
+.topic-toc h2{
+  font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);font-family:monospace;font-weight:700;
+  margin-bottom:1rem;
+}
+.topic-toc ol{list-style:none;counter-reset:toc;padding:0;margin:0;}
+.topic-toc li{
+  counter-increment:toc;
+  border-bottom:1px dotted var(--border);
+  padding:.55rem 0;font-size:.95rem;
+  display:flex;align-items:baseline;gap:.9rem;
+}
+.topic-toc li:last-child{border-bottom:none;}
+.topic-toc li::before{
+  content:counter(toc,decimal-leading-zero);
+  font-family:monospace;font-size:.72rem;color:var(--gold);
+  letter-spacing:.1em;flex-shrink:0;
+}
+.topic-toc a{
+  color:var(--ink);text-decoration:none;flex:1;
+}
+.topic-toc a:hover{color:var(--accent);}
+
+/* ----------  TOPIC BODY  ---------- */
+
+.topic-body{max-width:740px;margin:0 auto;padding:0 1.5rem;}
+.topic-body section{
+  margin-bottom:3.5rem;scroll-margin-top:5rem;
+}
+.topic-body section h2{
+  font-size:1.5rem;font-weight:700;color:var(--ink);
+  margin-bottom:1.2rem;padding-bottom:.6rem;
+  border-bottom:1px solid var(--border);
+  position:relative;line-height:1.3;
+}
+.topic-body section h2 .sec-num{
+  display:block;font-size:.7rem;font-family:monospace;
+  letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.4rem;font-weight:400;
+}
+.topic-body section h3{
+  font-size:1.05rem;font-weight:700;color:var(--ink);
+  margin:1.6rem 0 .6rem;letter-spacing:-.01em;
+}
+.topic-body p{
+  font-size:1rem;color:#2c2824;line-height:1.85;
+  margin-bottom:1.1rem;
+}
+.topic-body p.lede{
+  font-size:1.1rem;color:var(--ink);font-style:italic;
+}
+.topic-body ul,.topic-body ol{
+  margin:1rem 0 1.3rem 1.5rem;
+}
+.topic-body ul li,.topic-body ol li{
+  font-size:1rem;color:#2c2824;line-height:1.75;
+  margin-bottom:.55rem;
+}
+.topic-body blockquote{
+  margin:1.5rem 0;padding:1rem 1.5rem;
+  border-left:3px solid var(--gold);background:var(--cream);
+  font-style:italic;font-size:1.02rem;color:var(--accent);
+  line-height:1.7;
+}
+.topic-body blockquote cite{
+  display:block;font-size:.85rem;font-style:normal;
+  color:var(--muted);margin-top:.6rem;letter-spacing:.04em;
+}
+.topic-body blockquote cite::before{content:"— ";}
+.topic-body em{font-style:italic;}
+.topic-body strong{font-weight:700;color:var(--ink);}
+
+/* Pull-quote (centered, no border) */
+.topic-body .pullquote{
+  margin:2rem auto;padding:1.2rem 0;text-align:center;
+  font-family:Georgia,serif;font-style:italic;font-size:1.25rem;
+  color:var(--accent);max-width:560px;line-height:1.55;
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+
+/* Aside / callout */
+.topic-body .aside{
+  margin:1.6rem 0;padding:1.1rem 1.4rem;
+  background:#fffdf6;border:1px solid var(--border);
+  border-left:3px solid var(--accent);border-radius:2px;
+  font-size:.95rem;color:#3a3430;line-height:1.75;
+}
+.topic-body .aside .label{
+  display:block;font-size:.7rem;font-family:monospace;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:.45rem;font-weight:700;
+}
+
+/* Practical "how to do this" numbered list with framing */
+.topic-body .how-to{
+  counter-reset:howto;list-style:none;padding:0;margin:1.2rem 0;
+}
+.topic-body .how-to li{
+  counter-increment:howto;
+  padding:1rem 1.2rem 1rem 3.4rem;
+  margin-bottom:.6rem;position:relative;
+  background:var(--paper);border:1px solid var(--border);
+  border-radius:2px;
+}
+.topic-body .how-to li::before{
+  content:counter(howto,decimal-leading-zero);
+  position:absolute;left:1rem;top:1rem;
+  font-family:monospace;font-size:.78rem;
+  color:var(--gold);letter-spacing:.1em;font-weight:700;
+}
+
+/* Definition list for terms / glossary */
+.topic-body dl{margin:1.2rem 0;}
+.topic-body dt{
+  font-weight:700;color:var(--ink);font-style:italic;
+  margin-top:.9rem;
+}
+.topic-body dd{margin:.2rem 0 0 1.4rem;color:#2c2824;}
+
+/* Further reading list */
+.topic-body .further-reading{
+  list-style:none;padding:0;margin:1rem 0;
+}
+.topic-body .further-reading li{
+  padding:.7rem 0;border-bottom:1px dotted var(--border);
+  font-size:.96rem;line-height:1.7;
+}
+.topic-body .further-reading li:last-child{border-bottom:none;}
+.topic-body .further-reading .author{font-weight:700;color:var(--ink);}
+.topic-body .further-reading .work{font-style:italic;}
+.topic-body .further-reading .note{
+  display:block;color:var(--muted);font-size:.88rem;margin-top:.2rem;
+}
+
+/* Tags block on a topic page */
+.topic-body .topic-tags{
+  margin:2rem 0 0;padding-top:1.2rem;
+  border-top:1px solid var(--border);
+}
+
+/* ----------  PREV / NEXT NAV  ---------- */
+
+.prev-next{
+  max-width:840px;margin:3.5rem auto 1rem;
+  padding:0 1.5rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+}
+.prev-next a{
+  display:block;padding:1.2rem 1.4rem;
+  border:1px solid var(--border);background:#fff;
+  border-radius:2px;text-decoration:none;color:inherit;
+  transition:border-color .15s,background .15s;
+}
+.prev-next a:hover{border-color:var(--accent);background:var(--cream);}
+.prev-next .label{
+  display:block;font-size:.7rem;font-family:monospace;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.4rem;
+}
+.prev-next .title{
+  display:block;font-size:1rem;font-weight:700;color:var(--ink);
+  line-height:1.4;
+}
+.prev-next .next{text-align:right;}
+.prev-next .empty{
+  background:transparent;border:1px dashed var(--border);
+  pointer-events:none;
+}
+.prev-next .empty .label{color:var(--muted);}
+.prev-next .empty .title{color:var(--muted);font-style:italic;font-weight:400;}
+
+/* Back-links band */
+.back-links{
+  max-width:840px;margin:0 auto;padding:1.4rem 1.5rem 0;
+  text-align:center;font-size:.75rem;
+  letter-spacing:.18em;text-transform:uppercase;font-family:monospace;
+  color:var(--muted);
+}
+.back-links a{color:var(--muted);text-decoration:none;margin:0 .8rem;}
+.back-links a:hover{color:var(--accent);}
+
+/* ----------  FOOTER  ---------- */
+
+footer{background:var(--ink);color:#8a8070;text-align:center;padding:3rem 1.5rem;}
+footer p{font-size:.83rem;max-width:640px;margin:0 auto .6rem;line-height:1.7;}
+footer a{color:var(--gold);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+.fq{font-size:1.1rem;font-style:italic;color:#b0a898;margin-bottom:2rem;}
+
+/* ----------  RESPONSIVE  ---------- */
+
+@media(max-width:760px){
+  header.site{padding:3.5rem 1.2rem 3rem;}
+  .ch-head,.ch-intro,.ch-body{padding-left:1.25rem;padding-right:1.25rem;}
+  nav.chapters li a{padding:.6rem .55rem;font-size:.7rem;letter-spacing:.05em;}
+  .topic-toc{padding:1.2rem 1.3rem;}
+  .topic-body{padding:0 1.25rem;}
+  .topic-body section{margin-bottom:2.6rem;}
+  .topic-body section h2{font-size:1.3rem;}
+  .prev-next{grid-template-columns:1fr;}
+  .prev-next .next{text-align:left;}
+  .topic-head h1{font-size:1.8rem;}
+}
+
+/* ----------  PRINT  ---------- */
+
+@media print{
+  body{background:#fff;color:#000;}
+  header.site,header.page,nav.chapters,.prev-next,.back-links,footer{display:none;}
+  main,.topic-body,.breadcrumb,.topic-head,.topic-toc{max-width:none;}
+  a{color:#000;text-decoration:none;}
+  .topic-body section{page-break-inside:avoid;}
+  .topic-body section h2{break-after:avoid;}
+}
