@@ -1,0 +1,91 @@
+{
+  "format": "pol",
+  "version": "0.1.0",
+  "title": "Where Is The Love",
+  "creator": {
+    "name": "Illustrative specimen — not an official release file",
+    "handle": "human-repository-example",
+    "public_key": null
+  },
+  "created": {
+    "session_start": "2003-03-03T19:15:00-08:00",
+    "session_end": "2003-03-04T02:40:00-08:00",
+    "recorded_at": "2026-08-16T05:00:00.000Z"
+  },
+  "duration_seconds": 26700,
+  "location": {
+    "label": "A rehearsal room, Los Angeles (illustrative place name only)",
+    "lat": null,
+    "lon": null,
+    "accuracy_m": null,
+    "source": "manual"
+  },
+  "work": {
+    "type": "audio",
+    "filename": "where-is-the-love.mp3",
+    "sha256": "7dea2c436470b9a0cc7ed4dac73759b3a0b93ea89f7275ac0825d33fab369f55",
+    "bytes": 4821934,
+    "note": "Specimen binding only. The hash is SHA-256 of the string HUMAN-REPOSITORY-SPECIMEN-NOT-THE-COMMERCIAL-RECORDING, not a hash of any commercial recording. No audio is attached.",
+    "embedded": null
+  },
+  "attestation": {
+    "statement": "I attest that this specimen was written by a human to illustrate a .pol file. It is not an official Black Eyed Peas or will.i.am release file. It does not prove authorship of the song. It is evidence of a format, not of a session that happened.",
+    "signed": false,
+    "signature": null,
+    "algorithm": null
+  },
+  "effort": {
+    "hours": 7.42,
+    "drafts": 14,
+    "tools": [
+      "voices",
+      "live instruments",
+      "paper lyrics",
+      "a room that got too small"
+    ],
+    "interruptions": "News on a muted television. Someone in the hall asking whether the hook was too simple.",
+    "what_was_hard": "Keeping the question in the chorus from becoming a slogan. Leaving space for more than one throat.",
+    "narrative": "A long night imagined after the fact: verses passed around the room, a chorus that had to be sung until it stopped being clever, a political pop song that asked a question the room could not answer and sang it anyway. This paragraph is fiction in the service of a file format.",
+    "collaborators": [
+      "Named only as a band, because this is not their filing"
+    ]
+  },
+  "biometrics": {
+    "included": true,
+    "self_attested": true,
+    "device_signed": false,
+    "source": "manual",
+    "device": "No device. Numbers invented for the specimen.",
+    "heart_rate": {
+      "min": 72,
+      "avg": 104.7,
+      "max": 142,
+      "samples": 11
+    },
+    "steps": 1240,
+    "active_minutes": 95,
+    "sweat_or_skin_conductance": {
+      "value": null,
+      "unit": null,
+      "note": "Shirt damp after the last chorus. No conductance sensor. Sweat here is a sentence, not a proof."
+    },
+    "sample_count": 11,
+    "note": "Self-attested illustrative summary. Not covertly captured. Not signed by a watch."
+  },
+  "related": {
+    "c2pa_sidecar": null,
+    "work_url": null
+  },
+  "privacy": {
+    "location_included": true,
+    "coordinates_included": false,
+    "biometrics_included": true,
+    "work_embedded": false,
+    "work_hashed": true
+  },
+  "integrity": {
+    "alg": "sha256",
+    "canonical_sha256": "e565c0010de9abe2ad8a54c85792fcb56e20e0eabf2052e13a030c320d096ee1",
+    "note": "SHA-256 of the canonical JSON with integrity.canonical_sha256 set to an empty string. This detects later edits to this file; it does not prove a human made the work."
+  }
+}

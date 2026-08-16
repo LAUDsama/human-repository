@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proof of Life (.pol) &mdash; The Human Repository</title>
+  <meta name="description" content="Mint or read a .pol lived-experience file: a public-domain container for the time, place, effort, and optional body signals behind human-made work."/>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="page">
+  <div class="eyebrow">The Human Repository</div>
+  <nav class="page-nav" aria-label="Page navigation">
+    <a class="home-link" href="../index.html">&larr; Home</a>
+    <a class="home-link" href="../contents.html">Contents</a>
+    <a class="home-link" href="../index.html#chapters">Chapters</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">&rsaquo;</span>
+  <span class="here">Proof of Life</span>
+</nav>
+
+<main id="main">
+
+<section class="topic-head">
+  <div class="kicker">Archive Tool &middot; Open Format 0.1.0</div>
+  <h1>Proof of Life</h1>
+  <p class="deck">A .pol file is a lived-experience record you keep beside a song, essay, photograph, or other work: who stayed with it, how long, where if you choose, what was hard, and &mdash; only if you add them &mdash; a few body signals from a watch or a CSV.</p>
+  <div class="topic-meta-row">Create &middot; View &middot; No server &middot; No covert capture</div>
+</section>
+
+<nav class="topic-toc" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+    <li><a href="#honesty">What this will not prove</a></li>
+    <li><a href="#create">Mint a .pol</a></li>
+    <li><a href="#view">Open a .pol</a></li>
+    <li><a href="spec.html">Read the specification</a></li>
+  </ol>
+</nav>
+
+<article class="topic-body">
+  <section id="honesty">
+    <h2><span class="sec-num">01</span>What this will not prove</h2>
+    <p class="lede">A new file extension is easy. Cryptographic proof that a human sweated over a work is not &mdash; not from a static webpage, and not from numbers anyone can type.</p>
+    <p>This tool runs entirely in your browser. It does not upload your file, your location, or your pulse. It does not watch the camera, the microphone, or the keyboard. Location is added only if you press a clearly labeled button. Body signals are added only if you type them or choose a CSV. Nothing here is a government ID, a face unlock, or a detector of humanity.</p>
+    <p>AI can invent every field. The honest use is a common container and the habit of recording process: drafts, hours, collaborators, the take that cost something. For the longer argument, the schema, and how this sits beside Content Credentials and proof-of-personhood systems, read the <a href="spec.html">specification</a>.</p>
+  </section>
+</article>
+
+<section class="pol-tool" id="create" data-pol-creator aria-labelledby="create-title">
+  <span class="ch-num">Mint</span>
+  <h2 id="create-title">Create a lived-experience file</h2>
+  <p class="lede">Name the work. Optionally hash a file. Write what you did. Download <code>title.pol</code>. Keep it with the work, the way a photographer once kept a contact sheet beside a print.</p>
+
+  <form class="pol-form" onsubmit="return false;">
+    <fieldset class="pol-fieldset">
+      <legend>The work</legend>
+      <div class="pol-grid">
+        <div class="pol-field full">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" maxlength="200" placeholder="Where Is The Love" autocomplete="off" />
+        </div>
+        <div class="pol-field">
+          <label for="creator_name">Your name</label>
+          <input id="creator_name" name="creator_name" type="text" maxlength="120" autocomplete="name" />
+        </div>
+        <div class="pol-field">
+          <label for="creator_handle">Handle (optional)</label>
+          <input id="creator_handle" name="creator_handle" type="text" maxlength="80" placeholder="@you" autocomplete="off" />
+        </div>
+        <div class="pol-field">
+          <label for="work_type">Kind of work</label>
+          <select id="work_type" name="work_type">
+            <option value="other">Other</option>
+            <option value="audio">Audio</option>
+            <option value="image">Image</option>
+            <option value="text">Text</option>
+            <option value="video">Video</option>
+          </select>
+        </div>
+        <div class="pol-field">
+          <label for="work_file">Attach a file to hash (optional)</label>
+          <input id="work_file" name="work_file" type="file" />
+        </div>
+        <div class="pol-field full">
+          <label class="pol-check"><input name="embed_work" type="checkbox" /> Embed a copy if the file is under 256 KiB. Larger files store only the filename and SHA-256.</label>
+        </div>
+        <div class="pol-field full">
+          <label for="work_note">Note about the work</label>
+          <input id="work_note" name="work_note" type="text" maxlength="300" placeholder="Master bounce, draft 7, the take we kept" />
+        </div>
+      </div>
+      <p class="pol-status" data-pol-file-status>No file selected. You can still mint a .pol that records the making.</p>
+    </fieldset>
+
+    <fieldset class="pol-fieldset">
+      <legend>Time</legend>
+      <div class="pol-grid">
+        <div class="pol-field">
+          <label for="session_start">Session start</label>
+          <input id="session_start" name="session_start" type="datetime-local" />
+        </div>
+        <div class="pol-field">
+          <label for="session_end">Session end</label>
+          <input id="session_end" name="session_end" type="datetime-local" />
+        </div>
+        <div class="pol-field">
+          <label for="duration_hours">Hours (if you prefer a number)</label>
+          <input id="duration_hours" name="duration_hours" type="number" min="0" step="0.25" placeholder="3.5" />
+        </div>
+        <div class="pol-field">
+          <label for="drafts">Drafts or takes</label>
+          <input id="drafts" name="drafts" type="number" min="0" step="1" placeholder="12" />
+        </div>
+      </div>
+      <div class="pol-actions">
+        <button type="button" class="pol-btn secondary" data-pol-start>Mark start now</button>
+        <button type="button" class="pol-btn secondary" data-pol-end>Mark end now</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="pol-fieldset">
+      <legend>Sweat &mdash; the making</legend>
+      <div class="pol-grid">
+        <div class="pol-field full">
+          <label for="narrative">What you did</label>
+          <textarea id="narrative" name="narrative" maxlength="8000" placeholder="Rehearsed the chorus until the room went quiet. Threw out the clever bridge. Kept the cracked note on the last pass."></textarea>
+        </div>
+        <div class="pol-field full">
+          <label for="what_was_hard">What was hard</label>
+          <textarea id="what_was_hard" name="what_was_hard" maxlength="2000" placeholder="The third verse. Agreeing to leave a line unfinished."></textarea>
+        </div>
+        <div class="pol-field">
+          <label for="tools">Tools used</label>
+          <input id="tools" name="tools" type="text" maxlength="300" placeholder="Voice, piano, paper, a cheap mic" />
+        </div>
+        <div class="pol-field">
+          <label for="collaborators">Collaborators</label>
+          <input id="collaborators" name="collaborators" type="text" maxlength="300" placeholder="Names, if they want to be named" />
+        </div>
+        <div class="pol-field full">
+          <label for="interruptions">Interruptions</label>
+          <input id="interruptions" name="interruptions" type="text" maxlength="400" placeholder="A child woke. The neighbor drilled. The news came on." />
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="pol-fieldset">
+      <legend>Place &mdash; opt-in only</legend>
+      <p class="pol-note">This page will not read your location unless you ask. A typed place name is enough. Coordinates are optional and stay in the file you download, not on a server.</p>
+      <div class="pol-grid">
+        <div class="pol-field full">
+          <label for="location_label">Place name</label>
+          <input id="location_label" name="location_label" type="text" maxlength="200" placeholder="Kitchen table, Kingston / A rehearsal room" />
+        </div>
+      </div>
+      <div class="pol-actions">
+        <button type="button" class="pol-btn secondary" data-pol-locate>Add device location</button>
+        <button type="button" class="pol-btn secondary" data-pol-locate-clear>Clear place</button>
+      </div>
+      <p class="pol-status" data-pol-loc-status></p>
+    </fieldset>
+
+    <fieldset class="pol-fieldset">
+      <legend>Body signals &mdash; opt-in only</legend>
+      <p class="pol-note">Watches and phones do not hand a static website your Health data. Type a summary, or upload a simple CSV with a header row: <code>timestamp,hr,steps</code>. Optional fourth column: <code>gsr</code> or <code>eda</code>. These values are self-attested. They are not signed by a device, and sweat is not proof of a soul.</p>
+      <label class="pol-check"><input name="include_bio" type="checkbox" /> I choose to include a biometric summary in this file.</label>
+      <div class="pol-grid">
+        <div class="pol-field full">
+          <label for="bio_device">Device or app (if any)</label>
+          <input id="bio_device" name="bio_device" type="text" maxlength="120" placeholder="A running watch, a chest strap, a paper log" />
+        </div>
+        <div class="pol-field">
+          <label for="hr_min">Heart rate min</label>
+          <input id="hr_min" name="hr_min" type="number" min="0" step="1" />
+        </div>
+        <div class="pol-field">
+          <label for="hr_avg">Heart rate avg</label>
+          <input id="hr_avg" name="hr_avg" type="number" min="0" step="0.1" />
+        </div>
+        <div class="pol-field">
+          <label for="hr_max">Heart rate max</label>
+          <input id="hr_max" name="hr_max" type="number" min="0" step="1" />
+        </div>
+        <div class="pol-field">
+          <label for="steps">Steps</label>
+          <input id="steps" name="steps" type="number" min="0" step="1" />
+        </div>
+        <div class="pol-field">
+          <label for="active_minutes">Active minutes</label>
+          <input id="active_minutes" name="active_minutes" type="number" min="0" step="1" />
+        </div>
+        <div class="pol-field full">
+          <label for="sweat_note">Sweat, skin, or conductance note</label>
+          <input id="sweat_note" name="sweat_note" type="text" maxlength="300" placeholder="Shirt stuck to my back after the last chorus. No sensor." />
+        </div>
+        <div class="pol-field full">
+          <label for="wearable_csv">Or upload a wearable CSV</label>
+          <input id="wearable_csv" name="wearable_csv" type="file" accept=".csv,text/csv" />
+        </div>
+      </div>
+      <p class="pol-status" data-pol-csv-status></p>
+    </fieldset>
+
+    <fieldset class="pol-fieldset">
+      <legend>Attestation</legend>
+      <div class="pol-field">
+        <label for="attestation">First-person statement</label>
+        <textarea id="attestation" name="attestation" maxlength="4000"></textarea>
+      </div>
+    </fieldset>
+
+    <div class="pol-actions">
+      <button type="button" class="pol-btn" data-pol-download>Download .pol</button>
+      <a class="pol-btn secondary" href="spec.html">Read the spec</a>
+    </div>
+    <p class="pol-status" data-pol-form-status></p>
+  </form>
+
+  <div class="pol-preview">
+    <span class="ch-num">Preview</span>
+    <div data-pol-preview></div>
+    <h3>JSON that will be sealed</h3>
+    <pre data-pol-json></pre>
+  </div>
+</section>
+
+<section class="pol-tool" id="view" data-pol-viewer aria-labelledby="view-title">
+  <span class="ch-num">Read</span>
+  <h2 id="view-title">Open a .pol</h2>
+  <p class="lede">Drop a file, or open the illustrative <code>whereisthelove.pol</code>. That example is a specimen for the format. It is not an official file for the song.</p>
+  <div class="pol-drop" data-pol-drop>
+    <p>Drop a <code>.pol</code> JSON file here, or choose one from this device.</p>
+    <div class="pol-actions" style="justify-content:center;">
+      <label class="pol-btn secondary" for="pol_file">Open .pol</label>
+      <input id="pol_file" name="pol_file" type="file" accept=".pol,.json,application/json" hidden />
+      <button type="button" class="pol-btn secondary" data-pol-example data-href="examples/whereisthelove.pol">Load example</button>
+    </div>
+  </div>
+  <p class="pol-status" data-pol-view-status></p>
+  <div data-pol-view></div>
+</section>
+
+<div class="orn">&#10022; &#10022; &#10022;</div>
+
+<div class="back-links">
+  <a href="../index.html">&larr; Back to home</a>
+  <a href="spec.html">Specification</a>
+  <a href="../contents.html">Contents</a>
+</div>
+
+</main>
+
+<footer>
+  <p class="fq">&ldquo;We were here. We were confused. We were trying. It was enough.&rdquo;</p>
+  <p>Created by Lamar A. Whyte (LAUDsama). Dedicated to the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0 Universal</a>.</p>
+</footer>
+
+<script src="../assets/pol.js"></script>
+</body>
+</html>

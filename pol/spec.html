@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proof of Life Specification &mdash; The Human Repository</title>
+  <meta name="description" content="Open specification for the .pol lived-experience file: what it is, what it cannot prove, how it relates to C2PA and wearables, and a schema for version 0.1.0."/>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="page">
+  <div class="eyebrow">The Human Repository</div>
+  <nav class="page-nav" aria-label="Page navigation">
+    <a class="home-link" href="../index.html">&larr; Home</a>
+    <a class="home-link" href="../contents.html">Contents</a>
+    <a class="home-link" href="../index.html#chapters">Chapters</a>
+  </nav>
+</header>
+
+<nav class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span class="sep">&rsaquo;</span>
+  <a href="index.html">Proof of Life</a>
+  <span class="sep">&rsaquo;</span>
+  <span class="here">Specification</span>
+</nav>
+
+<main id="main">
+
+<section class="topic-head">
+  <div class="kicker">Open Format &middot; Version 0.1.0</div>
+  <h1>The .pol File</h1>
+  <p class="deck">A public-domain container for the lived process behind a work: time, optional place, effort, a hash of the artifact, a first-person attestation, and &mdash; only if a person chooses &mdash; a self-attested summary of body signals.</p>
+  <div class="topic-meta-row">Evidence &middot; Not a lie detector &middot; JSON on disk as name.pol</div>
+</section>
+
+<nav class="topic-toc" aria-label="In-page table of contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#what">What a .pol is</a></li>
+    <li><a href="#why">Why it exists</a></li>
+    <li><a href="#cannot">What it can and cannot prove</a></li>
+    <li><a href="#neighbors">Neighboring standards</a></li>
+    <li><a href="#wearables">Wearables, sweat, and the browser</a></li>
+    <li><a href="#schema">Format 0.1.0</a></li>
+    <li><a href="#example">whereisthelove.pol</a></li>
+    <li><a href="#later">How a watch could later sign a session</a></li>
+    <li><a href="#archive">How this belongs in the archive</a></li>
+    <li><a href="#sources">Sources and further reading</a></li>
+  </ol>
+</nav>
+
+<article class="topic-body">
+
+  <section id="what">
+    <h2><span class="sec-num">01</span>What a .pol is</h2>
+    <p class="lede">A <code>.pol</code> file is a JSON document you download as <code>name.pol</code>. It sits beside a work the way a lab notebook sits beside an experiment: not the song itself, not a watermark that cannot be stripped, but a record of having been there.</p>
+    <p>The letters are meant to be read two ways: <em>proof of life</em>, and a <em>lived-experience file</em>. In this archive they name an open, boring container. Anyone may write one with a text editor. This site offers a small minting page so a person does not have to remember the field names.</p>
+    <p>Version 0.1.0 prefers a single JSON document over a ZIP archive. A static GitHub Pages site can hash a file, build JSON, and trigger a download without npm, without a backend, and without asking anyone to install a packer. If the attached work is smaller than 256 KiB, the minting page may embed a base64 copy. If it is larger, the .pol stores the filename, byte length, and SHA-256 of the work, and leaves the artifact where it already lives &mdash; an <code>.mp3</code>, a folder of stems, a manuscript.</p>
+    <p>Suggested unofficial media type: <code>application/vnd.human-repository.pol+json</code>. Viewers should also accept <code>name.pol.json</code>. Pretty-printed JSON is allowed. Integrity is computed from a canonical form with sorted keys, so whitespace does not break the seal.</p>
+  </section>
+
+  <section id="why">
+    <h2><span class="sec-num">02</span>Why it exists</h2>
+    <p>In 2026, will.i.am returned in public to a problem the recording industry had trained people not to see: a song that took a week of human life and a song a model emits in minutes can share a marketplace, a file extension, and a fraction of a penny. Speaking with Variety at Cannes Lions, he called that arrangement inhumane &mdash; not because machines had learned melody, but because the market had stopped distinguishing effort. A diamond, he said, is not valued as a pearl, and a pearl is not valued as quartz. He asked for a <em>new file for humans</em>: not only the work, but the story and meaning behind it, a publication that could carry its own agent rather than handing the whole of authorship to a platform.</p>
+    <p>In a Bloomberg conversation published the same season, the question was put more physically: how do you validate human sweat? Human creativity, he said, should be worth more than compute output. In the Cannes conversation he sketched a capture path that already exists in pieces on people&rsquo;s wrists: a smartwatch noting temperature, blood pressure, and other biometrics; a camera in the room for the take you knew was the take; a location; a file whose name ended in <code>.pol</code>. Comscore, framing an earlier panel, used <em>Where Is The Love</em> (2003) as the song that would not have needed this question. In the Cannes remarks he illustrated the filename idea with a Black Eyed Peas title of his own. This archive uses <code>whereisthelove.pol</code> as a specimen because that is the song the public conversation reached for when it needed a human-made file that once required no alibi.</p>
+    <p>This prototype is not his product, not FYI.AI, and not an official standard. It is an attempt to take the public idea seriously enough to implement the part that can be implemented in the open: a container, a habit, and an honest limit. The Human Repository already exists to remember how humans lived and made things before those acts became optional. A .pol is a small practical cousin of that memory &mdash; a way for a living person to leave process beside product.</p>
+  </section>
+
+  <section id="cannot">
+    <h2><span class="sec-num">03</span>What it can and cannot prove</h2>
+    <div class="aside">
+      <span class="label">Honesty</span>
+      A .pol is evidence plus attestation. It is not a lie detector, not a government identity, and not cryptographic proof that a human made the work. Artificial intelligence can fill every field. A person can lie. A device can be spoofed. The seal on the JSON only says the document was not quietly rewritten after it was hashed.
+    </div>
+    <p>What version 0.1.0 <em>can</em> do:</p>
+    <ul>
+      <li>Give human-made work a distinct, documented companion file, so a marketplace or an archive can treat <code>song.pol</code> differently from a bare <code>song.mp3</code> if it chooses to.</li>
+      <li>Bind a narrative of effort to a SHA-256 of the work&rsquo;s bytes, when those bytes are available.</li>
+      <li>Record session start and end, duration, tools, drafts, collaborators, and what was hard.</li>
+      <li>Include a place only after a person types a label or presses an opt-in location button.</li>
+      <li>Include a biometric <em>summary</em> only after a person types numbers or uploads a CSV they already possess.</li>
+      <li>Detect later edits to the .pol itself by hashing a canonical JSON payload.</li>
+    </ul>
+    <p>What it cannot do:</p>
+    <ul>
+      <li>Prove that the attested human is the person named, or that they are unique among humans.</li>
+      <li>Prove that sweat, heart rate, or steps came from a particular body at a particular time, unless a later device signature is added and independently verified.</li>
+      <li>Detect AI-generated audio, text, or imagery. Absence of a .pol means nothing. Presence of a .pol means someone wrote a .pol.</li>
+      <li>Prevent stripping. Like EXIF and IPTC, a sidecar can be deleted. Unlike C2PA, v0.1 is not embedded in the media container and is not signed by a trusted claim generator.</li>
+      <li>Read Apple Health, Google Health Connect, Garmin, or Fitbit from this website.</li>
+    </ul>
+    <p>The useful comparison is not a passport. It is a signed artist&rsquo;s statement that anyone can forge, which nevertheless changes the culture if enough people form the habit of attaching one &mdash; and which can grow teeth later if hardware begins to countersign the session.</p>
+  </section>
+
+  <section id="neighbors">
+    <h2><span class="sec-num">04</span>Neighboring standards</h2>
+    <p>This format does not replace the work already done by people who care about provenance. It occupies a thinner niche: the <em>lived session</em>, written in language a person can read, mintable without a certificate authority.</p>
+    <h3>C2PA / Content Credentials</h3>
+    <p>The Coalition for Content Provenance and Authenticity specifies Content Credentials: a signed manifest of assertions (how an asset was made or edited), a claim that hashes those assertions and hard-binds them to the asset&rsquo;s bytes, and a cryptographic signature, often with a trusted timestamp. The manifest may be embedded (for example in JPEG, MP4, or PDF) or stored as a <code>.c2pa</code> sidecar, or fetched remotely. The Content Authenticity Initiative helped gather the requirements that became this work.</p>
+    <p>C2PA is the serious industry answer to &ldquo;has this file been tampered with, and who claims to have made the last signed statement about it?&rdquo; It is not an AI detector. IPTC&rsquo;s own FAQ is blunt: Content Credentials do not say whether the content is true; they do not identify AI-generated files that carry no credentials; software that reads them is not performing an AI check. They tell you whether a signed provenance record is well-formed, bound to the asset, and issued by a signer on a trust list.</p>
+    <p>A future .pol could be expressed as a custom C2PA assertion, or travel beside a <code>.c2pa</code> sidecar. Version 0.1 reserves a <code>related.c2pa_sidecar</code> field for that path. It does not implement signing, trust lists, JUMBF, or COSE. Implementing C2PA correctly in the browser without a claim-generator toolchain would be a different project, and claiming to have done it would be a lie.</p>
+    <h3>EXIF, IPTC, XMP, sidecars</h3>
+    <p>Cameras already write time, technical settings, and sometimes GPS into EXIF. Editors write creator, caption, rights, and location-created into IPTC fields, usually now as IPTC-in-XMP. Raw formats that cannot hold metadata use <code>.xmp</code> sidecars. These systems are mature, widely parsed, and unsigned. Anyone with ExifTool can alter them. They describe a capture or an editorial record. They do not describe drafts, interruptions, collaborators, or the feeling of a last take. A .pol is closer to a session diary that can optionally point at the same work those headers already describe.</p>
+    <h3>Proof of personhood is not a file format</h3>
+    <p>World ID (Worldcoin) and Proof of Humanity (the Kleros-associated registry) try to answer a different question: is this actor a unique living human? One uses an iris-imaging Orb and zero-knowledge presentation; the other uses video, vouching, and dispute. Both are identity systems. Neither is a container for a song. Binding a World ID or a PoH soulbound identifier to a .pol might later say &ldquo;a unique human sealed this,&rdquo; which is still not the same as &ldquo;this unique human wrote the third verse.&rdquo; This prototype does not require either, and will not demand a face scan, an iris, or a government document to mint a file.</p>
+  </section>
+
+  <section id="wearables">
+    <h2><span class="sec-num">05</span>Wearables, sweat, and the browser</h2>
+    <p>The public sketch of a proof-of-life file leans on a watch: temperature, blood pressure, biometrics, the body in the room while the take happens. That sketch is directionally right about hardware and wrong about the open web.</p>
+    <p>Apple HealthKit lives on the iPhone. There is no public server API and no browser API. A native iOS app must request per-type permission, read samples on the device, and only then export them. Google Health Connect is the same pattern on Android. Garmin&rsquo;s partner Health API and Fitbit&rsquo;s Web API require registered applications, OAuth, and a backend that can hold secrets. A GitHub Pages site cannot do any of this without becoming a different kind of product.</p>
+    <p>What a browser <em>can</em> do, today, without a server:</p>
+    <ul>
+      <li><strong>Web Crypto.</strong> SHA-256 of a file or of canonical JSON. This is reliable in current browsers.</li>
+      <li><strong>File API.</strong> The person chooses a work file or a CSV. The page does not search the disk.</li>
+      <li><strong>Geolocation.</strong> Only after a permission prompt, only if the person presses a button. Coordinates then live in the downloaded JSON. This page never sends them onward.</li>
+      <li><strong>Web Bluetooth (limited).</strong> Chromium browsers on desktop and Android can, after a user gesture, connect to a generic BLE heart-rate strap that exposes the standard GATT Heart Rate service. Safari on iOS does not implement Web Bluetooth. An Apple Watch does not expose HealthKit to arbitrary websites over Bluetooth. This minting page therefore does not pretend to pair with your watch.</li>
+    </ul>
+    <p>Sweat and skin conductance (GSR / EDA) are real laboratory and specialty-wearable signals. They are not a standard field in HealthKit in the way steps and heart rate are, and they are not a scientific proof of authorship. Perspiration accompanies effort, heat, anxiety, illness, and a warm room. Treating sweat as a lie detector would be a category error. This schema allows an optional note or a GSR column because the public idea named sweat, and because a person who owns such a sensor should have a place to put a summary. It labels those values self-attested.</p>
+    <p>There is no reliable secret biometric on the web. Anything a static page could capture without a button &mdash; a hidden motion sensor, a silent microphone, a keylogger &mdash; would be surveillance, and this archive will not implement it.</p>
+  </section>
+
+  <section id="schema">
+    <h2><span class="sec-num">06</span>Format 0.1.0</h2>
+    <p>A .pol file is a UTF-8 JSON object. Unknown fields should be preserved by editors and ignored by simple viewers. Required fields are <code>format</code>, <code>version</code>, and <code>title</code>. A machine-readable companion lives at <a href="schema.json">schema.json</a>.</p>
+    <dl>
+      <dt>format</dt>
+      <dd>The string <code>pol</code>.</dd>
+      <dt>version</dt>
+      <dd>Semver string. This specification is <code>0.1.0</code>.</dd>
+      <dt>title</dt>
+      <dd>Human-readable name of the work.</dd>
+      <dt>creator</dt>
+      <dd><code>name</code>, optional <code>handle</code>, optional <code>public_key</code> (reserved; unused in v0.1).</dd>
+      <dt>created</dt>
+      <dd><code>session_start</code> and <code>session_end</code> as ISO-8601 timestamps; <code>recorded_at</code> is when the file was sealed.</dd>
+      <dt>duration_seconds</dt>
+      <dd>Non-negative number, or <code>null</code>.</dd>
+      <dt>location</dt>
+      <dd>Optional. <code>label</code>, <code>lat</code>, <code>lon</code>, <code>accuracy_m</code>, <code>source</code> (<code>manual</code> or <code>browser_geolocation</code>). Omit the object, or omit coordinates, if the person did not opt in.</dd>
+      <dt>work</dt>
+      <dd><code>type</code> (<code>audio</code>, <code>image</code>, <code>text</code>, <code>video</code>, <code>other</code>), <code>filename</code>, <code>sha256</code> hex, <code>bytes</code>, <code>note</code>, optional <code>embedded</code> <code>{ encoding: "base64", media_type, data }</code>.</dd>
+      <dt>attestation</dt>
+      <dd>First-person <code>statement</code>. <code>signed</code> is <code>false</code> in v0.1. <code>signature</code> and <code>algorithm</code> are reserved.</dd>
+      <dt>effort</dt>
+      <dd><code>hours</code>, <code>drafts</code>, <code>tools[]</code>, <code>collaborators[]</code>, <code>interruptions</code>, <code>what_was_hard</code>, <code>narrative</code>.</dd>
+      <dt>biometrics</dt>
+      <dd>Optional. If present, <code>included</code> must be <code>true</code>. <code>self_attested</code> defaults to <code>true</code>. <code>device_signed</code> is <code>false</code> until a later version can verify a device signature. <code>source</code> is <code>manual</code> or <code>csv_upload</code>. Summaries: <code>heart_rate { min, avg, max, samples }</code>, <code>steps</code>, <code>active_minutes</code>, <code>sweat_or_skin_conductance { value, unit, note }</code>, <code>sample_count</code>, <code>device</code>, <code>note</code>.</dd>
+      <dt>related</dt>
+      <dd>Optional <code>c2pa_sidecar</code> filename and <code>work_url</code>. Both may be <code>null</code>.</dd>
+      <dt>privacy</dt>
+      <dd>Flags written by the minter: <code>location_included</code>, <code>coordinates_included</code>, <code>biometrics_included</code>, <code>work_embedded</code>, <code>work_hashed</code>.</dd>
+      <dt>integrity</dt>
+      <dd><code>alg</code> is <code>sha256</code>. <code>canonical_sha256</code> is the hex digest of the UTF-8 canonical JSON of the document after setting <code>integrity.canonical_sha256</code> to <code>""</code>. Canonical JSON means: recursively sort object keys, omit <code>undefined</code>, and <code>JSON.stringify</code> with no extra whitespace.</dd>
+    </dl>
+    <p>Download filenames should be a lowercase alphanumeric slug of the title plus <code>.pol</code>. <em>Where Is The Love</em> becomes <code>whereisthelove.pol</code>.</p>
+  </section>
+
+  <section id="example">
+    <h2><span class="sec-num">07</span>whereisthelove.pol</h2>
+    <p>The file at <a href="examples/whereisthelove.pol">examples/whereisthelove.pol</a> is a fictional-but-plausible specimen: a long night, a political pop song, collaborators, a place name without coordinates, and a self-attested pulse summary. The work hash is the SHA-256 of a clearly labeled specimen string, not a hash of any commercial recording. This archive does not claim that Black Eyed Peas, will.i.am, or any rightsholder issued the file.</p>
+    <p>Open it in the <a href="index.html#view">viewer</a>, or download it and drop it back onto the same page. If you opened these HTML files directly from disk, use the Open button; some browsers block <code>fetch</code> of the example from <code>file://</code>.</p>
+  </section>
+
+  <section id="later">
+    <h2><span class="sec-num">08</span>How a watch could later sign a session</h2>
+    <p>The missing piece is not another JSON field. It is a hardware root of trust that a verifier can check without trusting this website.</p>
+    <ol class="how-to">
+      <li>A native iOS app, with HealthKit entitlement, asks for heart-rate and workout permission, records a session while the person works, and exports a summary the person can still edit or refuse.</li>
+      <li>The watch or phone signs that summary with a device key (Secure Enclave / StrongBox), producing a signature over <code>{session_start, session_end, work_sha256, hr_summary}</code>.</li>
+      <li>The .pol stores the signature, the public key or certificate, and sets <code>biometrics.device_signed</code> to <code>true</code>. A viewer verifies the signature. Still not proof of authorship &mdash; only proof that <em>that device</em> attested to <em>those numbers</em> at seal time.</li>
+      <li>Optionally, a C2PA claim generator embeds or sidecars a Content Credential on the media file, with a custom assertion that points at the .pol hash, so stripping one file does not silently orphan the other.</li>
+      <li>Optionally, a person may attach a proof-of-personhood credential (World ID, Proof of Humanity, or a simpler public key they already use). That answers uniqueness, not sweat.</li>
+    </ol>
+    <p>Until those steps exist, the honest product is this one: a readable file, a hash, a story, and an opt-in body note. That is already more than a naked <code>.mp3</code> carries. It is not more than a person is willing to write down.</p>
+  </section>
+
+  <section id="archive">
+    <h2><span class="sec-num">09</span>How this belongs in the archive</h2>
+    <p>The Human Repository is a book of practices: breathing, repair, music, work done well. It was written at the threshold when machines began to perform many of those practices on our behalf. A .pol is not a chapter of instruction. It is a tool for the living, placed at the edge of the shelf so that a person who still makes something by hand or by voice can leave a trace of the making.</p>
+    <p>If the chapters teach how humans once stayed inside their own effort, the file format asks a smaller question: will you keep a record of that effort beside the object? Not because a court requires it. Because a culture that cannot tell a week of a life from a burst of compute will forget what the week was for.</p>
+    <p>Mint a file on the <a href="index.html">Proof of Life</a> page. Keep it with the work. Give it away with the work. Or write the JSON yourself. It belongs to everyone, the same as the rest of this archive.</p>
+  </section>
+
+  <section id="sources">
+    <h2><span class="sec-num">10</span>Sources and further reading</h2>
+    <p>Public remarks were paraphrased where a full transcript could not be verified. Direct quotations below appear in published text. Auto-generated video captions were treated as direction, not scripture.</p>
+    <ul class="further-reading">
+      <li><span class="author">will.i.am</span>, interviewed by Ramin Setoodeh. <span class="work">Variety</span>, Cannes Lions Brand Visionaries Happy Hour, 2026. <span class="note">On a &ldquo;new file for humans,&rdquo; unequal valuation of human effort and instant output, and the diamond / pearl / quartz comparison.</span></li>
+      <li><span class="author">will.i.am</span>, interviewed by Mishal Husain. <span class="work">Bloomberg</span> video, 14 August 2026. <span class="note">Published description: validating human sweat; human creativity worth more than compute output. Full dialogue was behind a bot wall at research time and is not quoted beyond that description.</span></li>
+      <li><span class="author">Comscore</span>. Panel note on Proof of Life and <span class="work">Where Is The Love</span> (2003) as a work that once needed no human alibi.</li>
+      <li><span class="author">C2PA</span>. <span class="work">Content Credentials specification and explainer</span>. Signed manifests, hard bindings, sidecars; explicitly not a truth meter or AI detector.</li>
+      <li><span class="author">IPTC</span>. <span class="work">Photo Metadata Standard</span> and C2PA FAQs. EXIF / IPTC / XMP as unsigned editorial and technical metadata.</li>
+      <li><span class="author">World</span> and <span class="author">Proof of Humanity</span>. Identity and uniqueness systems, not work-file formats.</li>
+      <li><span class="author">Apple HealthKit</span> and <span class="author">Google Health Connect</span>. On-device stores with no web API. Garmin and Fitbit cloud APIs require OAuth and a backend.</li>
+    </ul>
+    <div class="topic-tags">
+      <div class="tags">
+        <span class="tag">.POL</span>
+        <span class="tag">PROVENANCE</span>
+        <span class="tag">ATTESTATION</span>
+        <span class="tag">C2PA</span>
+        <span class="tag">WEARABLES</span>
+      </div>
+    </div>
+  </section>
+
+</article>
+
+<div class="prev-next">
+  <a href="index.html">
+    <span class="label">Tool</span>
+    <span class="title">Create or view a .pol</span>
+  </a>
+  <a class="next" href="../chapters/09-making-things/how-to-engage-with-music.html">
+    <span class="label">Related chapter</span>
+    <span class="title">How to Engage With Music</span>
+  </a>
+</div>
+
+<div class="back-links">
+  <a href="../index.html">&larr; Back to home</a>
+  <a href="../contents.html">Contents</a>
+</div>
+
+</main>
+
+<footer>
+  <p class="fq">&ldquo;We were here. We were confused. We were trying. It was enough.&rdquo;</p>
+  <p>Created by Lamar A. Whyte (LAUDsama). Dedicated to the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0 1.0 Universal</a>.</p>
+</footer>
+
+</body>
+</html>
